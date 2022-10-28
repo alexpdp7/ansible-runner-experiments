@@ -1,0 +1,10 @@
+#!/bin/sh
+
+rm -rf .builder-venv
+python3 -m venv .builder-venv
+(
+    . .builder-venv/bin/activate
+    pip install ansible-builder\<1.1.0
+    cd ee
+    ansible-builder build -v 3
+)

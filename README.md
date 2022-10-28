@@ -16,3 +16,7 @@ It will work even if you do not have the `ansible-playbook` installed.
 ```
 >>> ansible_runner.run(playbook="dummy-playbook.yml", private_data_dir=".", process_isolation=True)
 ```
+
+```
+$ ./create-ee
+```
