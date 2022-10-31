@@ -20,3 +20,13 @@ It will work even if you do not have the `ansible-playbook` installed.
 ```
 $ ./create-ee
 ```
+
+```
+>>> ansible_runner.run(module="ansible.builtin.debug", module_args="msg=baz", host_pattern="localhost", private_data_dir=".", process_isolation=True, container_image="localhost/ansible-execution-env:latest")
+```
+
+Copy a valid kubeconfig file to the project directory and:
+
+```
+>>> ansible_runner.run(module="kubernetes.core.k8s_info", module_args="kind=pod", host_pattern="localhost", private_data_dir=".", process_isolation=True, container_image="localhost/ansible-execution-env:latest", envvars={"K8S_AUTH_KUBECONFIG": "kubeconfig"})
+```
